@@ -2,17 +2,16 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta property="fb:app_id" content="376202959059747" />
-	<meta property="og:url" content="http://twdse01.delirium.com.tw/2012SP/" />
-	<meta property="og:title" content="雀巢茶品" />
-	<meta property="og:description" content="" />
+	<meta property="og:url" content="http://lab.gotoandplay.com.tw/rhinolu/urlrequest/" />
+	<meta property="og:title" content="Flash AS3 URL Request Template" />
+	<meta property="og:description" content="方便測試 Flash(AS3) 呼叫後端 API" />
 	<meta property="og:type" content="" />
-	<meta property="og:image" content="http://twdse01.delirium.com.tw/2012SP/images/fb.jpg" />
-	<meta property="og:site_name" content="Nestea" />
-	<meta name="title" content="雀巢茶品" />
-	<meta name="description" content="" />
-	<link rel="image_src" type="image/jpeg" href="http://twdse01.delirium.com.tw/2012SP/images/fb.jpg" />
-	<title>雀巢茶品</title>
+	<meta property="og:image" content="http://lab.gotoandplay.com.tw/rhinolu/urlrequest/images/fb.jpg" />
+	<meta property="og:site_name" content="Let's Play 玩創" />
+	<meta name="title" content="Flash AS3 URL Request Template" />
+	<meta name="description" content="方便測試 Flash(AS3) 呼叫後端 API" />
+	<link rel="image_src" type="image/jpeg" href="http://lab.gotoandplay.com.tw/rhinolu/urlrequest/images/fb.jpg" />
+	<title>Flash AS3 URL Request Template</title>
 	
 	<style type="text/css">
 		body{
@@ -29,37 +28,11 @@
 			margin: 0 auto;
 		}
 	</style>
-	<script type="text/javascript">
 	
-		function myShare(_callBack, _name, _desc)
-		{
-			var feed_obj = {};
-			//feed_obj.to = "";
-			feed_obj.method = "feed";
-			feed_obj.name = _name;
-			feed_obj.link = "http://www.gotoandplay.com.tw/clients/agenda/nestea/";
-			feed_obj.picture = "http://www.gotoandplay.com.tw/clients/agenda/nestea/images/fb.jpg";
-			feed_obj.description = _desc;
-			feed_obj.display = "popup";
-			
-			FB.ui(feed_obj,
-				function(response) {
-					if (response){
-						document["flashcontent"][_callBack](response);
-					}else{
-						document["flashcontent"][_callBack]("false");
-					}
-				}
-			);
-		}
-		
-	</script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-	<script type="text/javascript" src="http://connect.facebook.net/zh_TW/all.js"></script>
 	<script type="text/javascript" src="js/swffit.js"></script>
 </head>
 <body>
-	<div id="fb-root"></div>
 	<div id="flashcontent">
 	</div>
 	<script type="text/javascript">
@@ -73,36 +46,11 @@
 		params.base = "swf/";
 		
 		var flashvars = {};
-		//flashvars.TabPage = "";
-		flashvars.SiteURL = "http://twdse01.delirium.com.tw/2012SP/";
-		flashvars.APP_ID = "376202959059747";
-		flashvars.CreateTeamAPI = "../api/CreateTeam.jsp";
-		flashvars.LeaderLoginAPI = "../api/LeaderLogin.jsp";
-		flashvars.MemberLoginAPI = "../api/MemberLogin.jsp";
-		flashvars.GetMemberInfoAPI = "../api/GetMemberInfo.jsp";
-		flashvars.GetTeamInfoAPI = "../api/GetTeamInfo.jsp";
-		flashvars.SavePinCodeAPI = "../api/SavePinCode.jsp";
-		flashvars.InviteAPI = "../api/Invite.jsp";
-		flashvars.GetSlotAPI = "../api/GetSlot.jsp";
-		flashvars.GetRankWeekAPI = "../api/GetRankWeek.jsp";
-		flashvars.GetRankAllAPI = "../api/GetRankAll.jsp";
-		flashvars.RegisterAPI = "../api/Register.jsp";
-		flashvars.RecordInviteAPI = "../api/RecordInvite.jsp";
-		flashvars.SharePic = "http://twdse01.delirium.com.tw/2012SP/images/fb.jpg";
-		flashvars.InvitePic = "http://twdse01.delirium.com.tw/2012SP/images/fb.jpg";
-		flashvars.SlotPic0 = "http://twdse01.delirium.com.tw/2012SP/images/slot0.jpg";
-		flashvars.SlotPic1 = "http://twdse01.delirium.com.tw/2012SP/images/slot1.jpg";
-		flashvars.SlotPic2 = "http://twdse01.delirium.com.tw/2012SP/images/slot2.jpg";
-		flashvars.branch = swfobject.getQueryParamValue("to");
-		flashvars.TeamID = swfobject.getQueryParamValue("TeamID");
-		flashvars.FBID = swfobject.getQueryParamValue("FBID");
-		flashvars.Email = swfobject.getQueryParamValue("Email");
-		flashvars.Name = swfobject.getQueryParamValue("Name");
 		
-		var attributes = {
-			id: "flashcontent",
-			name: "flashcontent"
-		};
+		var attributes = {};
+		attributes.id = "flashcontent";
+		attributes.name = "flashcontent";
+		
 		swfobject.embedSWF("swf/main.swf", "flashcontent", "100%", "100%", "10.0.0", "swf/expressInstall.swf", flashvars, params, attributes);
 		swffit.fit("flashcontent", 980, 600);
 	</script>

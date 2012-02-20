@@ -7,7 +7,7 @@ package
 		
 		public function Main() 
 		{
-			
+			addChild(new Clip());
 		}
 		
 	}

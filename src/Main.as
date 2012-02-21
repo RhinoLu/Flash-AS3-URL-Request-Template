@@ -36,21 +36,24 @@ package
 		
 		private function onAPIFormCall(type:String, obj:*= null):void 
 		{
+			trace(type, obj);
 			if (type == Main.CREATE_API_CLIP) {
-				addAPIClip();
+				t.obj(obj);
+				addAPIClip(obj);
 			}
 		}
 		
-		private function addAPIClip():void
+		private function addAPIClip(obj:Object):void
 		{
-			//var clip:APIClip = new APIClip();
-			//addChild(clip);
+			var clip:APIClip = new APIClip();
+			clip.me
+			addChild(clip);
 			//clipArray.push(clip);
 		}
 		
-		private function removeAPIClip(clip:*):void
+		private function removeAPIClip(clip:APIClip):void
 		{
-			//removeChild(clip);
+			removeChild(clip);
 			//clipArray.push(clip);
 		}
 		

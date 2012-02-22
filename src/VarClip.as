@@ -18,14 +18,13 @@ package
 		
 		public function get varName():String 
 		{
-			_varName = txt_name.text;
 			return _varName;
 		}
 		
 		public function set varName(value:String):void 
 		{
-			txt_name.text = _varName;
 			_varName = value;
+			txt_name.text = _varName + " :";
 		}
 		
 		public function get varValue():String 

@@ -46,7 +46,10 @@ package
 		private function addAPIClip(obj:Object):void
 		{
 			var clip:APIClip = new APIClip();
-			clip.me
+			clip.desc = obj.desc;
+			clip.api = obj.api;
+			clip.varArray = obj.vars;
+			clip.method = obj.method;
 			addChild(clip);
 			//clipArray.push(clip);
 		}

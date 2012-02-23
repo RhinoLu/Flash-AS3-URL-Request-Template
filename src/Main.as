@@ -56,6 +56,8 @@ package
 			clip.varArray = obj.vars;
 			clip.method = obj.method;
 			clip.signal.add(onAPIClipCall);
+			clip.x = (stage.stageWidth - 283) * 0.5;
+			clip.y = (stage.stageHeight - 331) * 0.5;
 			addChild(clip);
 			clipArray.push(clip);
 		}

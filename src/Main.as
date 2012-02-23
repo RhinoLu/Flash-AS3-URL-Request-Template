@@ -32,11 +32,12 @@ package
 			form = new APIForm();
 			addChild(form);
 			form.signal.add(onAPIFormCall);
+			onResize();
 		}
 		
 		private function onAPIFormCall(type:String, obj:*= null):void 
 		{
-			trace(type, obj);
+			//trace(type, obj);
 			if (type == Main.CREATE_API_CLIP) {
 				t.obj(obj);
 				addAPIClip(obj);
@@ -50,20 +51,37 @@ package
 			clip.api = obj.api;
 			clip.varArray = obj.vars;
 			clip.method = obj.method;
+			clip.signal.add(onAPIClipCall);
 			addChild(clip);
-			//clipArray.push(clip);
+			clipArray.push(clip);
 		}
 		
 		private function removeAPIClip(clip:APIClip):void
 		{
 			removeChild(clip);
-			//clipArray.push(clip);
+			for (var i:int = 0; i < clipArray.length; i++) 
+			{
+				if (clipArray[i] == clip) {
+					clipArray.splice(i, 1);
+					break;
+				}
+			}
+		}
+		
+		private function onAPIClipCall(type:String, obj:*= null):void 
+		{
+			//trace(type, obj);
+			if (type == BaseAbstract.HIDE_COMPLETE) {
+				if (obj is APIClip) {
+					removeAPIClip(APIClip(obj));
+				}
+			}
 		}
 		
 		private function onResize(e:Event = null):void 
 		{
-			form.x = stage.stageWidth - form.width - 100;
-			form.y = 100;
+			form.x = stage.stageWidth - form.width - 20;
+			form.y = 20;
 		}
 	}
 

@@ -36,7 +36,7 @@ package
 		public function show():void
 		{
 			this.alpha = 0;
-			TweenMax.to(this, 0.5, new TweenMaxVars().autoAlpha(1).onComplete(onShowComplete).vars);
+			TweenMax.to(this, 0.25, new TweenMaxVars().autoAlpha(1).onComplete(onShowComplete).vars);
 		}
 		
 		protected function onShowComplete():void 
@@ -46,7 +46,7 @@ package
 		
 		public function hide():void
 		{
-			TweenMax.to(this, 0.5, new TweenMaxVars().autoAlpha(0).onComplete(onHideComplete).vars);
+			TweenMax.to(this, 0.25, new TweenMaxVars().autoAlpha(0).onComplete(onHideComplete).vars);
 		}
 		
 		protected function onHideComplete():void 

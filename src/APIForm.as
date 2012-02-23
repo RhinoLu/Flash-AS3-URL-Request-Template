@@ -44,6 +44,21 @@ package
 			arrangeDistance(0);
 		}
 		
+		private function resetForm():void
+		{
+			txt_desc.text = "";
+			txt_api.text = "";
+			var clip:VarForm;
+			var len:uint = varArray.length;
+			for (var i:int = 0; i < len; i++) 
+			{
+				clip = varArray[i];
+				removeChild(clip);
+			}
+			varArray = [];
+			arrangeDistance();
+		}
+		
 		private function onMakeClick(e:MouseEvent):void 
 		{
 			if (!chkForm()) return;
@@ -60,6 +75,8 @@ package
 			obj.method = (radio_get.selected)?URLRequestMethod.GET:URLRequestMethod.POST;
 			
 			make(obj);
+			
+			resetForm();
 		}
 		
 		private function chkForm():Boolean

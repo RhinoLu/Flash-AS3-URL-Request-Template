@@ -1,6 +1,8 @@
 package
 {
 	import flash.display.Sprite;
+	import flash.display.StageAlign;
+	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	
 	public class Main extends Sprite
@@ -20,12 +22,14 @@ package
 		private function init(e:Event = null):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
+			stage.align = StageAlign.TOP_LEFT;
+			//stage.align = StageAlign.TOP;
+			stage.scaleMode = StageScaleMode.NO_SCALE;
+			stage.stageFocusRect = false; // 防止按 tab 出現黃框
 			addAPIForm();
 			onResize();
 			stage.addEventListener(Event.RESIZE, onResize)
 		}
-		
-		
 		
 		private function addAPIForm():void
 		{
@@ -39,7 +43,7 @@ package
 		{
 			//trace(type, obj);
 			if (type == Main.CREATE_API_CLIP) {
-				t.obj(obj);
+				//t.obj(obj);
 				addAPIClip(obj);
 			}
 		}
@@ -59,12 +63,9 @@ package
 		private function removeAPIClip(clip:APIClip):void
 		{
 			removeChild(clip);
-			for (var i:int = 0; i < clipArray.length; i++) 
-			{
-				if (clipArray[i] == clip) {
-					clipArray.splice(i, 1);
-					break;
-				}
+			var index:int = clipArray.indexOf(clip);
+			if ( index > -1) {
+				clipArray.splice(index, 1);
 			}
 		}
 		

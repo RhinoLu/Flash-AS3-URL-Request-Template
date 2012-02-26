@@ -1,8 +1,11 @@
 package
 {
+	import com.greensock.data.TweenMaxVars;
+	import com.greensock.TweenMax;
 	import fl.controls.Button;
 	import fl.controls.RadioButton;
 	import fl.controls.TextInput;
+	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.net.URLRequestMethod;
@@ -17,10 +20,12 @@ package
 		public var txt_desc:TextInput;
 		public var radio_get:RadioButton;
 		public var radio_post:RadioButton;
+		public var bg:Sprite;
 		
 		private var varArray:Array = new Array();
 		
-		private const VAR_FORM_START_AT_Y:Number = 100; // ------------------- 「新增參數」初始Y位置
+		private const VAR_FORM_START_AT_X:Number = 10; // -------------------- 「新增參數」初始X位置
+		private const VAR_FORM_START_AT_Y:Number = 150; // ------------------- 「新增參數」初始Y位置
 		private const VAR_FORM_HEIGHT:Number = 30; // ------------------------ 「新增參數」的高度
 		private const BTN_ADD_VAR_FORM_DISTANCE:Number = 50; // -------------- 「新增參數」與按鈕的距離
 		
@@ -36,6 +41,22 @@ package
 			btn_make.y = btn_add_var.y + BTN_ADD_VAR_FORM_DISTANCE;
 			btn_add_var.addEventListener(MouseEvent.CLICK, addVarForm);
 			btn_make.addEventListener(MouseEvent.CLICK, onMakeClick);
+			arrangeDistance(0);
+		}
+		
+		private function resetForm():void
+		{
+			txt_desc.text = "";
+			txt_api.text = "";
+			var clip:VarForm;
+			var len:uint = varArray.length;
+			for (var i:int = 0; i < len; i++) 
+			{
+				clip = varArray[i];
+				removeChild(clip);
+			}
+			varArray = [];
+			arrangeDistance();
 		}
 		
 		private function onMakeClick(e:MouseEvent):void 
@@ -54,6 +75,8 @@ package
 			obj.method = (radio_get.selected)?URLRequestMethod.GET:URLRequestMethod.POST;
 			
 			make(obj);
+			
+			resetForm();
 		}
 		
 		private function chkForm():Boolean
@@ -84,7 +107,7 @@ package
 		{
 			var clip:VarForm = new VarForm();
 			addChild(clip);
-			clip.x = 0;
+			clip.x = VAR_FORM_START_AT_X;
 			clip.y = VAR_FORM_START_AT_Y + (varArray.length * VAR_FORM_HEIGHT);
 			clip.varNum = varArray.length + 1;
 			varArray.push(clip);
@@ -117,10 +140,15 @@ package
 			arrangeDistance();
 		}
 		
-		private function arrangeDistance():void
+		private function arrangeDistance(__duration:Number = 0.25):void
 		{
-			btn_add_var.y = VAR_FORM_START_AT_Y + (varArray.length * VAR_FORM_HEIGHT);
-			btn_make.y = btn_add_var.y + BTN_ADD_VAR_FORM_DISTANCE;
+			var toValue:Number;
+			toValue = VAR_FORM_START_AT_Y + (varArray.length * VAR_FORM_HEIGHT);
+			TweenMax.to(btn_add_var, __duration, new TweenMaxVars().y(toValue).vars);
+			toValue = toValue + BTN_ADD_VAR_FORM_DISTANCE;
+			TweenMax.to(btn_make, __duration, new TweenMaxVars().y(toValue).vars);
+			toValue = toValue + btn_make.height + 10;
+			TweenMax.to(bg, __duration, new TweenMaxVars().height(toValue).vars);
 		}
 		
 		private function make(value:Object):void

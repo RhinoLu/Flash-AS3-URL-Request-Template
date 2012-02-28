@@ -9,6 +9,8 @@ package
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.net.URLRequestMethod;
+	import gtap.utils.ChkRepeatedValue;
+	import gtap.utils.JS;
 	
 	public class APIForm extends BaseAbstract 
 	{
@@ -82,22 +84,53 @@ package
 		private function chkForm():Boolean
 		{
 			if (txt_desc.length < 1) {
-				
+				JS.alert("Enter description.");
 				return false;
 			}
 			
 			if (txt_api.length < 1) {
-				
+				JS.alert("Enter API path.");
 				return false;
 			}
 			
+			var clip:VarForm;
 			for (var i:int = 0; i < varArray.length; i++) 
 			{
-				var clip:VarForm = varArray[i];
+				clip = varArray[i];
 				if (clip.varName.length < 1) {
-					
+					JS.alert("Enter variable's name.");
 					return false;
 				}
+			}
+			
+			var clip1:VarForm;
+			var clip2:VarForm;
+			var repeatedArray:Array = [];
+			ChkRepeatedValue.findRepeatedValue();
+			for (var j:int = 0; j < varArray.length - 1; j++) 
+			{
+				for (var k:int = j + 1; k < varArray.length; k++) 
+				{
+					clip1 = varArray[j];
+					clip2 = varArray[k];
+					if (clip1.varName == clip2.varName) {
+						//JS.alert("Variable's name repeated.");
+						//return false;
+						if (!repeatedArray[j]) {
+							repeatedArray[j] = [];
+						}
+						repeatedArray[j].push(k);
+					}
+				}
+				//trace(repeatedArray[j].indexOf(j + 1));
+				/*if (repeatedArray[j].indexOf(j + 1) > -1) {
+					j++;
+				}*/
+			}
+			if (repeatedArray.length > 0) {
+				t.obj(repeatedArray);
+				JS.alert("Variable's name repeated.");
+				return false;
 			}
 			
 			return true;

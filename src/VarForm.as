@@ -49,8 +49,9 @@ package
 			txt_num.text = "var" + value + " :";
 		}
 		
-		
-		
-		
+		public function drawFocus(draw:Boolean):void
+		{
+			txt_name.drawFocus(draw);
+		}
 	}
 }

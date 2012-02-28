@@ -1,9 +1,13 @@
 package
 {
+	import com.greensock.events.LoaderEvent;
+	import com.greensock.loading.data.DataLoaderVars;
+	import com.greensock.loading.DataLoader;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
+	import gtap.utils.ChkRepeatedValue;
 	
 	public class Main extends Sprite
 	{
@@ -14,8 +18,12 @@ package
 		
 		private var form:APIForm;
 		
+		private var consoleLoader:DataLoader;
+		private var consoleXML:XML;
+		
 		public function Main() 
 		{
+			ChkRepeatedValue.findRepeatedValue([9,2,0,1,0,2,0]);
 			stage?init():addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 		
@@ -28,7 +36,9 @@ package
 			stage.stageFocusRect = false; // 防止按 tab 出現黃框
 			addAPIForm();
 			onResize();
-			stage.addEventListener(Event.RESIZE, onResize)
+			stage.addEventListener(Event.RESIZE, onResize);
+			
+			loadXML();
 		}
 		
 		private function addAPIForm():void
@@ -56,8 +66,8 @@ package
 			clip.varArray = obj.vars;
 			clip.method = obj.method;
 			clip.signal.add(onAPIClipCall);
-			clip.x = (stage.stageWidth - 283) * 0.5;
-			clip.y = (stage.stageHeight - 331) * 0.5;
+			clip.x = int((stage.stageWidth - 283) * 0.5 + (Math.random() * 20 - 10));
+			clip.y = int((stage.stageHeight - 331) * 0.5 + (Math.random() * 20 - 10));
 			addChild(clip);
 			clipArray.push(clip);
 		}
@@ -86,6 +96,45 @@ package
 			form.x = stage.stageWidth - form.width - 20;
 			form.y = 20;
 		}
+		
+		// load XML ***************************************************************************************************************************
+		private function loadXML():void
+		{
+			consoleLoader = new DataLoader("xml/console.xml", new DataLoaderVars().autoDispose(true).noCache(true).onComplete(onLoadXMLComplete).onError(onLoadXMLError).vars);
+			consoleLoader.load();
+		}
+		
+		private function onLoadXMLComplete(e:LoaderEvent):void 
+		{
+			consoleXML = XML(consoleLoader.content);
+			//t.obj(consoleXML);
+			consoleLoader.dispose(true);
+			trace(consoleXML.console);
+			trace(consoleXML.console.length());
+			var len:uint = consoleXML.console.length();
+			var obj:Object;
+			for (var i:int = 0; i < len; i++) 
+			{
+				obj = { };
+				obj.desc = consoleXML.console[i].desc;
+				obj.api = consoleXML.console[i].api;
+				obj.method = consoleXML.console[i].method;
+				obj.vars = [];
+				var vars_len:uint = consoleXML.console[i].vars.length();
+				for (var j:int = 0; j < vars_len; j++) 
+				{
+					obj.vars.push(consoleXML.console[i].vars[j]);
+				}
+				addAPIClip(obj);
+			}
+		}
+		
+		private function onLoadXMLError(e:LoaderEvent):void 
+		{
+			trace(e);
+		}
+		
+		
 	}
 
 }

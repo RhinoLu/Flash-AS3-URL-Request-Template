@@ -141,13 +141,13 @@ package
 		
 		private function onCallError(e:LoaderEvent):void
 		{
-			addResult(decodeURIComponent(e.text));
+			addResult(e.text);
 			_loader.dispose(true);
 		}
 		
 		private function onCallComplete(e:LoaderEvent):void
 		{
-			addResult(decodeURIComponent(_loader.content));
+			addResult(_loader.content);
 			_loader.dispose(true);
 		}
 		
@@ -158,13 +158,14 @@ package
 				_result = new APIClipResult();
 				_result.x = 283;
 				_result.y = 11;
+				_result.changeHeight(bg.height);
 				addChildAt(_result, 0);
 			}
 			_result.result = value;
 			
 			
-			TweenMax.to(btn_close, 0.5, new TweenMaxVars().x(283 * 2 - 8).vars);
-			TweenMax.to(bgTitle, 0.5, new TweenMaxVars().width(283 * 2 + 2).vars);
+			TweenMax.to(btn_close, 0.25, new TweenMaxVars().x(283 * 2 - 8).vars);
+			TweenMax.to(bgTitle, 0.25, new TweenMaxVars().width(283 * 2 + 2).vars);
 		}
 		
 		public function get method():String

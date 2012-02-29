@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<console>
+		<desc>Title</desc>
+		<api>http://example.com/api/login</api>
+		<method>POST</method>
+		<vars>Name</vars>
+		<vars>Password</vars>
+	</console>
+	<console>
+		<desc>詢問現金折價券發放狀況</desc>
+		<api>http://www.letsplay.com.tw/clients/wwwins/tlw_green/api/GetCouponInfo.php</api>
+		<method>GET</method>
+	</console>
+</data>

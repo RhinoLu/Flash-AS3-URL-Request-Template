@@ -7,9 +7,4 @@
 		<vars>Name</vars>
 		<vars>Password</vars>
 	</console>
-	<console>
-		<desc>詢問現金折價券發放狀況</desc>
-		<api>http://www.letsplay.com.tw/clients/wwwins/tlw_green/api/GetCouponInfo.php</api>
-		<method>GET</method>
-	</console>
 </data>

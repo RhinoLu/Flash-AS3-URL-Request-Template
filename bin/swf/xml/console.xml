@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
 	<console>
-		<desc>Title</desc>
-		<api>http://example.com/api/login</api>
+		<desc>Login</desc>
+		<api>../api/login</api>
 		<method>POST</method>
-		<vars>Name</vars>
-		<vars>Password</vars>
+		<vars>email</vars>
+		<vars>password</vars>
 	</console>
 </data>

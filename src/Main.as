@@ -1,18 +1,36 @@
 package
 {
+	import com.greensock.data.TweenMaxVars;
 	import com.greensock.events.LoaderEvent;
 	import com.greensock.loading.data.DataLoaderVars;
 	import com.greensock.loading.DataLoader;
+	import com.greensock.TweenMax;
+	import fl.controls.Button;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
+	import flash.events.DataEvent;
 	import flash.events.Event;
+	import flash.events.HTTPStatusEvent;
+	import flash.events.IOErrorEvent;
+	import flash.events.MouseEvent;
+	import flash.events.ProgressEvent;
+	import flash.events.SecurityErrorEvent;
+	import flash.net.FileFilter;
+	import flash.utils.ByteArray;
+	import gtap.net.MyBrowseXML;
 	import gtap.utils.ChkRepeatedValue;
+	import gtap.utils.QuickBtn;
+	import flash.net.FileReference;
 	
 	public class Main extends Sprite
 	{
 		public static const CREATE_API_CLIP:String = "create api clip";
 		
+		public var btn_load:Button;
+		public var btn_export:Button;
+		
+		private var clipContainer:Sprite;
 		private var clipArray:Array = new Array();
 		private var clipCurrent:*;
 		
@@ -21,9 +39,10 @@ package
 		private var consoleLoader:DataLoader;
 		private var consoleXML:XML;
 		
+		private var file:FileReference;
+		
 		public function Main() 
 		{
-			ChkRepeatedValue.findRepeatedValue([9,2,0,1,0,2,0]);
 			stage?init():addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 		
@@ -37,8 +56,21 @@ package
 			addAPIForm();
 			onResize();
 			stage.addEventListener(Event.RESIZE, onResize);
+			clipContainer = addChildAt(new Sprite(), 0) as Sprite;
+			loadDefaultXML();
 			
-			loadXML();
+			QuickBtn.setBtn(btn_load  , null, null, onClick);
+			QuickBtn.setBtn(btn_export, null, null, onClick);
+		}
+		
+		private function onClick(e:MouseEvent):void 
+		{
+			var btn:Button = e.target as Button;
+			if (btn == btn_load) {
+				loadLocalXML();
+			}else if (btn == btn_export) {
+				exportXML();
+			}
 		}
 		
 		private function addAPIForm():void
@@ -66,15 +98,19 @@ package
 			clip.varArray = obj.vars;
 			clip.method = obj.method;
 			clip.signal.add(onAPIClipCall);
-			clip.x = int((stage.stageWidth - 283) * 0.5 + (Math.random() * 20 - 10));
-			clip.y = int((stage.stageHeight - 331) * 0.5 + (Math.random() * 20 - 10));
-			addChild(clip);
+			//clip.x = int((stage.stageWidth - 283) * 0.5 + (Math.random() * 20 - 10));
+			//clip.y = int((stage.stageHeight - 331) * 0.5 + (Math.random() * 20 - 10));
+			clip.x = 100 + (clipContainer.numChildren * 50);
+			clip.y = 100 + (clipContainer.numChildren * 50);
+			clipContainer.addChild(clip);
 			clipArray.push(clip);
+			
+			TweenMax.from(clip, 0.5, new TweenMaxVars().x(clip.x + (Math.random() * 100 - 50)).y(clip.y + (Math.random() * 100 - 50)).vars);
 		}
 		
 		private function removeAPIClip(clip:APIClip):void
 		{
-			removeChild(clip);
+			clipContainer.removeChild(clip);
 			var index:int = clipArray.indexOf(clip);
 			if ( index > -1) {
 				clipArray.splice(index, 1);
@@ -97,44 +133,98 @@ package
 			form.y = 20;
 		}
 		
-		// load XML ***************************************************************************************************************************
-		private function loadXML():void
+		// load local XML ****************************************************************************************************************************
+		private function loadLocalXML():void
 		{
-			consoleLoader = new DataLoader("xml/console.xml", new DataLoaderVars().autoDispose(true).noCache(true).onComplete(onLoadXMLComplete).onError(onLoadXMLError).vars);
+			var myBrowseXML:MyBrowseXML = new MyBrowseXML();
+			myBrowseXML.signal.add(onMyBrowseXMLCall);
+		}
+		
+		private function onMyBrowseXMLCall(type:String, obj:*= null):void 
+		{
+			trace("type : " + type);
+			if (type == Event.COMPLETE) {
+				//t.obj(obj);
+				//trace(ByteArray(obj).readUTFBytes(ByteArray(obj).length));
+				var xml:XML = XML(ByteArray(obj).readUTFBytes(ByteArray(obj).length));
+				parseXML(xml);
+			}
+		}
+		
+		// export XML ****************************************************************************************************************************
+		private function exportXML():void
+		{
+			var xml:XML;
+			var clip:APIClip;
+			var str:String = "<data>";
+			var varsStr:String;
+			for (var i:int = 0; i < clipContainer.numChildren; i++) 
+			{
+				clip = clipContainer.getChildAt(i) as APIClip;
+				varsStr = "";
+				for (var j:int = 0; j < clip.varArray.length; j++) 
+				{
+					varsStr += "<vars><![CDATA[" + clip.varArray[j] + "]]></vars>";
+				}
+				str += "<console><desc><![CDATA[" + clip.desc + "]]></desc><api><![CDATA[" + clip.api + "]]></api><method>" + clip.method + "</method>" + varsStr + "</console>";
+			}
+			str += "</data>";
+			//trace(str);
+			xml = new XML(str);
+			//trace(xml);
+			
+			var MyFile:FileReference = new FileReference();
+			MyFile.save(xml, "console.xml");
+		}
+		
+		// load default XML ***************************************************************************************************************************
+		private function loadDefaultXML():void
+		{
+			consoleLoader = new DataLoader("xml/console.xml", new DataLoaderVars().autoDispose(true).noCache(true).onComplete(onloadDefaultXMLComplete).onError(onloadDefaultXMLError).vars);
 			consoleLoader.load();
 		}
 		
-		private function onLoadXMLComplete(e:LoaderEvent):void 
+		private function onloadDefaultXMLComplete(e:LoaderEvent):void 
 		{
 			consoleXML = XML(consoleLoader.content);
 			//t.obj(consoleXML);
 			consoleLoader.dispose(true);
-			trace(consoleXML.console);
-			trace(consoleXML.console.length());
-			var len:uint = consoleXML.console.length();
-			var obj:Object;
-			for (var i:int = 0; i < len; i++) 
-			{
-				obj = { };
-				obj.desc = consoleXML.console[i].desc;
-				obj.api = consoleXML.console[i].api;
-				obj.method = consoleXML.console[i].method;
-				obj.vars = [];
-				var vars_len:uint = consoleXML.console[i].vars.length();
-				for (var j:int = 0; j < vars_len; j++) 
-				{
-					obj.vars.push(consoleXML.console[i].vars[j]);
-				}
-				addAPIClip(obj);
-			}
+			//trace(consoleXML.console);
+			//trace(consoleXML.console.length());
+			parseXML(consoleXML);
 		}
 		
-		private function onLoadXMLError(e:LoaderEvent):void 
+		private function onloadDefaultXMLError(e:LoaderEvent):void 
 		{
 			trace(e);
 		}
 		
-		
+		// parse XML *******************************************************************************************************************************
+		private function parseXML(xml:XML):void
+		{
+			trace(xml);
+			while (clipContainer.numChildren > 0) 
+			{
+				clipContainer.removeChildAt(0);
+			}
+			
+			var len:uint = xml.console.length();
+			var obj:Object;
+			for (var i:int = 0; i < len; i++) 
+			{
+				obj = { };
+				obj.desc = xml.console[i].desc;
+				obj.api = xml.console[i].api;
+				obj.method = xml.console[i].method;
+				obj.vars = [];
+				var vars_len:uint = xml.console[i].vars.length();
+				for (var j:int = 0; j < vars_len; j++) 
+				{
+					obj.vars.push(xml.console[i].vars[j]);
+				}
+				addAPIClip(obj);
+			}
+		}
 	}
 
 }

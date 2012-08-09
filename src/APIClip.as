@@ -1,22 +1,30 @@
 package
 {
+	import com.dynamicflash.util.Base64;
 	import com.greensock.data.TweenMaxVars;
 	import com.greensock.events.LoaderEvent;
+	import com.greensock.loading.core.LoaderItem;
 	import com.greensock.loading.data.DataLoaderVars;
+	import com.greensock.loading.data.ImageLoaderVars;
 	import com.greensock.loading.DataLoader;
+	import com.greensock.loading.ImageLoader;
 	import com.greensock.TweenMax;
 	import fl.controls.Button;
 	import fl.controls.Label;
 	import fl.controls.TextArea;
 	import fl.controls.TextInput;
+	import flash.display.BitmapData;
+	import flash.display.Loader;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
 	import flash.events.MouseEvent;
+	import flash.geom.Rectangle;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
+	import flash.utils.ByteArray;
 	import gtap.net.MyRequest;
 	import ru.inspirit.net.MultipartURLLoader;
 	
@@ -39,13 +47,14 @@ package
 		private var _api:String;
 		private var _method:String;
 		private var _varArray:Array;
-		private var _loader:DataLoader;
+		private var _loader:LoaderItem;
 		private var clipContainer:Sprite;
 		private var clipArray:Array;
 		
 		private var _result:APIClipResult;
 		private var _sendByMultipartURLLoader:Boolean = false;
 		private var ml:MultipartURLLoader;
+		private var _returnType:String;
 		
 		public function APIClip()
 		{
@@ -139,11 +148,11 @@ package
 			if (_sendByMultipartURLLoader) {
 				sendFormByMultipartURLLoader();
 			}else {
-				sendFormByDataLoader();
+				sendFormByGSLoader();
 			}
 		}
 		
-		private function sendFormByDataLoader():void
+		private function sendFormByGSLoader():void
 		{
 			var _obj:Object = {};
 			var clip:VarClip;
@@ -153,7 +162,11 @@ package
 				_obj[_varArray[i].varName] = clip.varValue;
 			}
 			var _request:URLRequest = MyRequest.makeRequest(_api, _obj, _method);
-			_loader = new DataLoader(_request, new DataLoaderVars().autoDispose(true).noCache(true).onError(onCallError).onComplete(onCallComplete).vars);
+			if (_returnType == "bitmapdata") {
+				_loader = new ImageLoader(_request, new ImageLoaderVars().autoDispose(true).noCache(true).onError(onCallError).onComplete(onCallComplete).vars);
+			}else {
+				_loader = new DataLoader(_request, new DataLoaderVars().autoDispose(true).noCache(true).onError(onCallError).onComplete(onCallComplete).vars);
+			}
 			_loader.load();
 		}
 		
@@ -192,7 +205,11 @@ package
 		private function onCallComplete(e:Event):void
 		{
 			if (e is LoaderEvent) {
-				addResult(_loader.content);
+				if (_returnType == "bitmapdata") {
+					addResult(ImageLoader(_loader).rawContent.bitmapData);
+				}else {
+					addResult(_loader.content);
+				}
 				_loader.dispose(true);
 			}else {
 				addResult(ml.loader.data);
@@ -200,7 +217,7 @@ package
 			}
 		}
 		
-		private function addResult(value:String):void
+		private function addResult(value:*):void
 		{
 			if (!_result)
 			{
@@ -260,6 +277,11 @@ package
 			_desc = value;
 			txt_desc.text = _desc;
 			bgEmpty.width = 283 - txt_desc.textWidth - 30;
+		}
+		
+		public function set returnType(value:String):void 
+		{
+			_returnType = value;
 		}
 	}
 }

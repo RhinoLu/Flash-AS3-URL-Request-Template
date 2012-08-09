@@ -20,7 +20,7 @@ package
 		private var _file:FileReference;
 		private var _data:ByteArray;
 		
-		public function VarClip(type:String = "string") 
+		public function VarClip(type:String) 
 		{
 			_varType = type;
 		}
@@ -39,7 +39,7 @@ package
 				txt_value.editable = false;
 				_file = new FileReference();
 			}else {
-				trace(this, "type error!");
+				trace(this, "_varType error");
 			}
 		}
 		
@@ -81,6 +81,7 @@ package
 		
 		public function set varName(value:String):void 
 		{
+			if (!value) return;
 			_varName = value;
 			txt_name.text = _varName + " :";
 		}

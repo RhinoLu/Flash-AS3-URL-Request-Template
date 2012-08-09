@@ -104,7 +104,7 @@
           </DOMCompiledClipItem>
      </media>
      <symbols>
-          <Include href="APIClip.xml" itemID="4f436a01-00000215" lastModified="1330437551"/>
+          <Include href="APIClip.xml" itemID="4f436a01-00000215" lastModified="1344508314"/>
           <Include href="APIClipResult.xml" itemID="4f460ce0-0000058c" lastModified="1330435155"/>
           <Include href="APIForm.xml" itemID="4f4347f9-000005ac" lastModified="1344487164"/>
           <Include href="bgEmpty.xml" loadImmediate="false" itemID="4f460d33-000005de" lastModified="1329990972"/>
@@ -167,13 +167,13 @@
           <Include href="TextArea.xml" itemID="44d8c4d1-000000c9" lastModified="1292423118"/>
           <Include href="TextInput.xml" itemID="44b159e1-000000fd" lastModified="1292423118"/>
           <Include href="UIScrollBar.xml" itemID="44aaa686-00000064" lastModified="1292423118"/>
-          <Include href="VarClip.xml" itemID="4f436b16-00000217" lastModified="1344487839"/>
+          <Include href="VarClip.xml" itemID="4f436b16-00000217" lastModified="1344513926"/>
           <Include href="VarForm.xml" itemID="4f4347f6-000005ab" lastModified="1344489208"/>
      </symbols>
      <timelines>
           <DOMTimeline name="Scene 1">
                <layers>
-                    <DOMLayer name="APIForm" color="#4FFF4F" current="true" isSelected="true" autoNamed="false" layerType="guide">
+                    <DOMLayer name="APIForm" color="#4FFF4F" locked="true" autoNamed="false" layerType="guide">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
@@ -200,7 +200,7 @@
                                              <transformationPoint>
                                                   <Point x="50" y="11"/>
                                              </transformationPoint>
-                                             <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='5'>
+                                             <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='APIClip' oldCopiedComponentPath=''>
 </component>
 ]]></dataBindingXML>
                                              <parametersAsXML><![CDATA[   <property id="emphasized">
@@ -241,7 +241,7 @@
                                              <transformationPoint>
                                                   <Point x="50" y="11"/>
                                              </transformationPoint>
-                                             <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='6'>
+                                             <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='APIClip' oldCopiedComponentPath=''>
 </component>
 ]]></dataBindingXML>
                                              <parametersAsXML><![CDATA[   <property id="emphasized">
@@ -292,11 +292,11 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="APIClip" color="#4FFF4F" locked="true" autoNamed="false" layerType="guide">
+                    <DOMLayer name="APIClip" color="#4FFF4F" current="true" isSelected="true" autoNamed="false" layerType="guide">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="APIClip" centerPoint3DX="302" centerPoint3DY="307">
+                                        <DOMSymbolInstance libraryItemName="APIClip" selected="true" centerPoint3DX="302" centerPoint3DY="307">
                                              <matrix>
                                                   <Matrix tx="88" ty="207"/>
                                              </matrix>
@@ -313,26 +313,26 @@
      </timelines>
      <PrinterSettings/>
      <publishHistory>
-          <PublishItem publishSize="74489" publishTime="1344489181"/>
-          <PublishItem publishSize="74433" publishTime="1344489000"/>
-          <PublishItem publishSize="74440" publishTime="1344488933"/>
-          <PublishItem publishSize="74441" publishTime="1344488906"/>
-          <PublishItem publishSize="74408" publishTime="1344488771"/>
-          <PublishItem publishSize="74388" publishTime="1344488677"/>
-          <PublishItem publishSize="74380" publishTime="1344488628"/>
-          <PublishItem publishSize="72759" publishTime="1344486769"/>
-          <PublishItem publishSize="70628" publishTime="1330437460"/>
-          <PublishItem publishSize="70628" publishTime="1330437311"/>
-          <PublishItem publishSize="70612" publishTime="1330437164"/>
-          <PublishItem publishSize="70615" publishTime="1330437078"/>
-          <PublishItem publishSize="70628" publishTime="1330436943"/>
-          <PublishItem publishSize="70616" publishTime="1330436874"/>
-          <PublishItem publishSize="70610" publishTime="1330436823"/>
-          <PublishItem publishSize="70603" publishTime="1330436645"/>
-          <PublishItem publishSize="70601" publishTime="1330436623"/>
-          <PublishItem publishSize="70594" publishTime="1330436605"/>
-          <PublishItem publishSize="70598" publishTime="1330436586"/>
-          <PublishItem publishSize="70590" publishTime="1330436553"/>
+          <PublishItem publishSize="81772" publishTime="1344515136"/>
+          <PublishItem publishSize="81770" publishTime="1344515039"/>
+          <PublishItem publishSize="81761" publishTime="1344515017"/>
+          <PublishItem publishSize="81767" publishTime="1344514908"/>
+          <PublishItem publishSize="81763" publishTime="1344514820"/>
+          <PublishItem publishSize="81793" publishTime="1344514783"/>
+          <PublishItem publishSize="81748" publishTime="1344514759"/>
+          <PublishItem publishSize="81770" publishTime="1344514727"/>
+          <PublishItem publishSize="78978" publishTime="1344510373"/>
+          <PublishItem publishSize="78967" publishTime="1344510318"/>
+          <PublishItem publishSize="7961" publishTime="1344510152"/>
+          <PublishItem publishSize="78280" publishTime="1344509856"/>
+          <PublishItem publishSize="78224" publishTime="1344509496"/>
+          <PublishItem publishSize="77563" publishTime="1344508968"/>
+          <PublishItem publishSize="77548" publishTime="1344508644"/>
+          <PublishItem publishSize="77551" publishTime="1344508620"/>
+          <PublishItem publishSize="77531" publishTime="1344508590"/>
+          <PublishItem publishSize="77550" publishTime="1344508537"/>
+          <PublishItem publishSize="77532" publishTime="1344508455"/>
+          <PublishItem publishSize="77527" publishTime="1344508296"/>
      </publishHistory>
      <swcCache>
           <Swc hashKey="k718tUOF1.A1OSpQnqdJJ0" href="9d31qzomd7.swc">

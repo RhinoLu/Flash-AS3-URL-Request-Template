@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="VarClip" itemID="4f436b16-00000217" linkageExportForAS="true" linkageClassName="VarClip" lastModified="1344487839" lastUniqueIdentifier="7">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="VarClip" itemID="4f436b16-00000217" linkageExportForAS="true" linkageClassName="VarClip" lastModified="1344513926" lastUniqueIdentifier="7">
   <timeline>
     <DOMTimeline name="VarClip">
       <layers>
@@ -13,7 +13,7 @@
                   <transformationPoint>
                     <Point x="50" y="11"/>
                   </transformationPoint>
-                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.38.7'>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='APIClip' oldCopiedComponentPath='38.7'>
 </component>
 ]]></dataBindingXML>
                   <parametersAsXML><![CDATA[   <property id="emphasized">
@@ -43,7 +43,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="txt_value" color="#FF4FFF" current="true" isSelected="true" autoNamed="false" layerType="guide">
+        <DOMLayer name="txt_value" color="#FF4FFF" locked="true" autoNamed="false" layerType="guide">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -54,7 +54,7 @@
                   <transformationPoint>
                     <Point x="50" y="11"/>
                   </transformationPoint>
-                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.38.3'>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='APIClip' oldCopiedComponentPath='38.3'>
 </component>
 ]]></dataBindingXML>
                   <parametersAsXML><![CDATA[   <property id="displayAsPassword">
@@ -95,7 +95,7 @@
                   <transformationPoint>
                     <Point x="50" y="11"/>
                   </transformationPoint>
-                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.38.3'>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='APIClip' oldCopiedComponentPath='38.3'>
 </component>
 ]]></dataBindingXML>
                   <parametersAsXML><![CDATA[   <property id="displayAsPassword">
@@ -125,7 +125,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="txt_name" color="#FF800A" locked="true" autoNamed="false">
+        <DOMLayer name="txt_name" color="#FF800A" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -136,7 +136,7 @@
                   <transformationPoint>
                     <Point x="50.1" y="11"/>
                   </transformationPoint>
-                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.38.4'>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='APIClip' oldCopiedComponentPath='38.4'>
 </component>
 ]]></dataBindingXML>
                   <parametersAsXML><![CDATA[   <property id="autoSize">

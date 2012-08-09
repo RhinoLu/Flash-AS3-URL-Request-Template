@@ -97,6 +97,12 @@ package
 			clip.api = obj.api;
 			clip.varArray = obj.vars;
 			clip.method = obj.method;
+			trace(obj.returnType);
+			if (obj.returnType) {
+				clip.returnType = obj.returnType;
+			}else {
+				clip.returnType = "string";
+			}
 			clip.signal.add(onAPIClipCall);
 			clip.x = 100 + (clipContainer.numChildren * 50);
 			clip.y = 100 + (clipContainer.numChildren * 50);
@@ -162,10 +168,9 @@ package
 				varsStr = "";
 				for (var j:int = 0; j < clip.varArray.length; j++) 
 				{
-					//varsStr += "<vars><![CDATA[" + clip.varArray[j] + "]]></vars>";
 					varsStr += "<vars><name><![CDATA[" + clip.varArray[j].varName + "]]></name><type><![CDATA[" + clip.varArray[j].varType + "]]></type></vars>";
 				}
-				str += "<console><desc><![CDATA[" + clip.desc + "]]></desc><api><![CDATA[" + clip.api + "]]></api><method>" + clip.method + "</method>" + varsStr + "</console>";
+				str += "<console><desc><![CDATA[" + clip.desc + "]]></desc><api><![CDATA[" + clip.api + "]]></api><method>" + clip.method + "</method><returnType>string</returnType>" + varsStr + "</console>";
 			}
 			str += "</data>";
 			//trace(str);
@@ -199,7 +204,7 @@ package
 		// parse XML *******************************************************************************************************************************
 		private function parseXML(xml:XML):void
 		{
-			trace(xml);
+			//trace(xml);
 			while (clipContainer.numChildren > 0) 
 			{
 				clipContainer.removeChildAt(0);
@@ -210,16 +215,18 @@ package
 			for (var i:int = 0; i < len; i++) 
 			{
 				obj = { };
-				obj.desc = xml.console[i].desc;
-				obj.api = xml.console[i].api;
-				obj.method = xml.console[i].method;
+				obj.desc       = xml.console[i].desc;
+				obj.api        = xml.console[i].api;
+				obj.method     = xml.console[i].method;
+				obj.returnType = xml.console[i].returnType;
 				obj.vars = [];
 				var vars_len:uint = xml.console[i].vars.length();
 				for (var j:int = 0; j < vars_len; j++) 
 				{
-					//obj.vars.push(xml.console[i].vars[j]);
-					obj.vars.push( { "varName":xml.console[i].vars[j].name, "varType":xml.console[i].vars[j].type } );
-					
+					obj.vars.push( { 
+						"varName"   :xml.console[i].vars[j].name,
+						"varType"   :xml.console[i].vars[j].type
+					} );
 				}
 				addAPIClip(obj);
 			}

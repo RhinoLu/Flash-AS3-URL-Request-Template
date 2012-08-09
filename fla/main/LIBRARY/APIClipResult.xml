@@ -1,0 +1,118 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="APIClipResult" itemID="4f460ce0-0000058c" linkageExportForAS="true" linkageClassName="APIClipResult" lastModified="1330435155" lastUniqueIdentifier="6">
+  <timeline>
+    <DOMTimeline name="APIClipResult">
+      <layers>
+        <DOMLayer name="txt_result" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="TextArea" name="txt_result" centerPoint3DX="142" centerPoint3DY="166" uniqueID="4">
+                  <matrix>
+                    <Matrix a="2.29998779296875" d="5.22723388671875" tx="27" ty="51"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="22"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.37.4'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="condenseWhite">
+      <Inspectable name="condenseWhite" variable="condenseWhite" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="editable">
+      <Inspectable name="editable" variable="editable" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="horizontalScrollPolicy">
+      <Inspectable name="horizontalScrollPolicy" variable="horizontalScrollPolicy" category="" verbose="0" defaultValue="auto" enumeration="auto,on,off" type="List"/>
+   </property>
+   <property id="htmlText">
+      <Inspectable name="htmlText" variable="htmlText" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="maxChars">
+      <Inspectable name="maxChars" variable="maxChars" category="" verbose="0" defaultValue="0" type="Number"/>
+   </property>
+   <property id="restrict">
+      <Inspectable name="restrict" variable="restrict" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="text">
+      <Inspectable name="text" variable="text" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="verticalScrollPolicy">
+      <Inspectable name="verticalScrollPolicy" variable="verticalScrollPolicy" category="" verbose="0" defaultValue="auto" enumeration="auto,on,off" type="List"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="wordWrap">
+      <Inspectable name="wordWrap" variable="wordWrap" category="" verbose="0" defaultValue="true" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Label" color="#FF800A" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="Label" centerPoint3DX="77.1" centerPoint3DY="44.35" uniqueID="5">
+                  <matrix>
+                    <Matrix tx="27" ty="33.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.37.5'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="autoSize">
+      <Inspectable name="autoSize" variable="autoSize" category="" verbose="0" defaultValue="none" enumeration="left,center,right,none" type="List"/>
+   </property>
+   <property id="condenseWhite">
+      <Inspectable name="condenseWhite" variable="condenseWhite" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="htmlText">
+      <Inspectable name="htmlText" variable="htmlText" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="selectable">
+      <Inspectable name="selectable" variable="selectable" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="text">
+      <Inspectable name="text" variable="text" category="" verbose="0" defaultValue="Result :" type="String"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="wordWrap">
+      <Inspectable name="wordWrap" variable="wordWrap" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="bg" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FormBg" name="bg" centerPoint3DX="141.5" centerPoint3DY="150.9">
+                  <transformationPoint>
+                    <Point x="141.5" y="150.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

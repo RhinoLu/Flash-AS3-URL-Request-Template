@@ -4,7 +4,13 @@
 		<desc>Login</desc>
 		<api>../api/login</api>
 		<method>POST</method>
-		<vars>email</vars>
-		<vars>password</vars>
+		<vars>
+			<name>email</name>
+			<type>string</type>
+		</vars>
+		<vars>
+			<name>password</name>
+			<type>file</type>
+		</vars>
 	</console>
 </data>

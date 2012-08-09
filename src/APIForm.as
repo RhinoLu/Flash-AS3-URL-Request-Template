@@ -28,7 +28,7 @@ package
 		
 		private const VAR_FORM_START_AT_X:Number = 10; // -------------------- 「新增參數」初始X位置
 		private const VAR_FORM_START_AT_Y:Number = 150; // ------------------- 「新增參數」初始Y位置
-		private const VAR_FORM_HEIGHT:Number = 30; // ------------------------ 「新增參數」的高度
+		private const VAR_FORM_HEIGHT:Number = 45; // ------------------------ 「新增參數」的高度
 		private const BTN_ADD_VAR_FORM_DISTANCE:Number = 50; // -------------- 「新增參數」與按鈕的距離
 		
 		public function APIForm() 
@@ -72,7 +72,8 @@ package
 			for (var i:int = 0; i < varArray.length; i++) 
 			{
 				var clip:VarForm = varArray[i];
-				obj.vars[i] = clip.varName;
+				//obj.vars[i] = clip.varName;
+				obj.vars[i] = { "varName":clip.varName, "varType":clip.varType };
 			}
 			obj.method = (radio_get.selected)?URLRequestMethod.GET:URLRequestMethod.POST;
 			

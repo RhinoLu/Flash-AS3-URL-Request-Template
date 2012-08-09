@@ -1,0 +1,306 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="APIClip" itemID="4f436a01-00000215" linkageExportForAS="true" linkageClassName="APIClip" lastModified="1330437551" lastUniqueIdentifier="38">
+  <timeline>
+    <DOMTimeline name="APIClip">
+      <layers>
+        <DOMLayer name="txt_desc" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="txt_desc" fontRenderingMode="device" width="96.95" height="12.55" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="16" ty="14"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>登入</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="11" bitmapSize="220" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                    <DOMTextRun>
+                      <characters></characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="11" bitmapSize="220" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="txt_desc" color="#4FFFFF" locked="true" autoNamed="false" visible="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="Label" name="txt_desc" centerPoint3DX="109.2" centerPoint3DY="23" uniqueID="28">
+                  <matrix>
+                    <Matrix a="2" tx="9" ty="12"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.28'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="autoSize">
+      <Inspectable name="autoSize" variable="autoSize" category="" verbose="0" defaultValue="left" enumeration="left,center,right,none" type="List"/>
+   </property>
+   <property id="condenseWhite">
+      <Inspectable name="condenseWhite" variable="condenseWhite" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="htmlText">
+      <Inspectable name="htmlText" variable="htmlText" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="selectable">
+      <Inspectable name="selectable" variable="selectable" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="text">
+      <Inspectable name="text" variable="text" category="" verbose="0" defaultValue="登入" type="String"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="wordWrap">
+      <Inspectable name="wordWrap" variable="wordWrap" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="btn_call" color="#FF800A" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="Button" name="btn_call" centerPoint3DX="140" centerPoint3DY="213" uniqueID="26">
+                  <matrix>
+                    <Matrix a="2.4000244140625" tx="20" ty="202"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.26'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="emphasized">
+      <Inspectable name="emphasized" variable="emphasized" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="label">
+      <Inspectable name="label" variable="label" category="" verbose="0" defaultValue="POST" type="String"/>
+   </property>
+   <property id="labelPlacement">
+      <Inspectable name="labelPlacement" variable="labelPlacement" category="" verbose="0" defaultValue="right" enumeration="left,right,top,bottom" type="List"/>
+   </property>
+   <property id="selected">
+      <Inspectable name="selected" variable="selected" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="toggle">
+      <Inspectable name="toggle" variable="toggle" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="txt_api" color="#FF4FFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="TextInput" name="txt_api" centerPoint3DX="140" centerPoint3DY="73" uniqueID="27">
+                  <matrix>
+                    <Matrix a="2.4000244140625" tx="20" ty="62"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.27'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="displayAsPassword">
+      <Inspectable name="displayAsPassword" variable="displayAsPassword" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="editable">
+      <Inspectable name="editable" variable="editable" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="maxChars">
+      <Inspectable name="maxChars" variable="maxChars" category="" verbose="0" defaultValue="0" type="Number"/>
+   </property>
+   <property id="restrict">
+      <Inspectable name="restrict" variable="restrict" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="text">
+      <Inspectable name="text" variable="text" category="" verbose="0" defaultValue="http://www.example.com/api/login" type="String"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="guide" color="#4F80FF" locked="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="VarClip" centerPoint3DX="120" centerPoint3DY="122.5">
+                  <matrix>
+                    <Matrix tx="20" ty="102"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="100" y="20.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="VarClip" centerPoint3DX="120" centerPoint3DY="167.5">
+                  <matrix>
+                    <Matrix tx="20" ty="147"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="100" y="20.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Label" color="#808080" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="Label" centerPoint3DX="70.1" centerPoint3DY="55.35" uniqueID="29">
+                  <matrix>
+                    <Matrix tx="20" ty="44.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.29'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="autoSize">
+      <Inspectable name="autoSize" variable="autoSize" category="" verbose="0" defaultValue="none" enumeration="left,center,right,none" type="List"/>
+   </property>
+   <property id="condenseWhite">
+      <Inspectable name="condenseWhite" variable="condenseWhite" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="htmlText">
+      <Inspectable name="htmlText" variable="htmlText" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="selectable">
+      <Inspectable name="selectable" variable="selectable" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="text">
+      <Inspectable name="text" variable="text" category="" verbose="0" defaultValue="API path :" type="String"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="wordWrap">
+      <Inspectable name="wordWrap" variable="wordWrap" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="btn_close" color="#FF4FFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="btn_close" name="btn_close" centerPoint3DX="278" centerPoint3DY="5.5">
+                  <matrix>
+                    <Matrix tx="275" ty="3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="bgEmpty" color="#4FFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="bgEmpty" name="bgEmpty" centerPoint3DX="398" centerPoint3DY="20.5">
+                  <matrix>
+                    <Matrix tx="283" ty="12"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="bg" color="#FF800A" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FormBg" name="bg" centerPoint3DX="141.5" centerPoint3DY="161.9">
+                  <matrix>
+                    <Matrix ty="11"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="141.5" y="150.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="bgTitle" color="#4F80FF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="bgTitle" name="bgTitle" centerPoint3DX="141.5" centerPoint3DY="6.05">
+                  <transformationPoint>
+                    <Point x="141.5" y="6.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="APIClipResult" color="#FF4F4F" locked="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="APIClipResult" centerPoint3DX="424.5" centerPoint3DY="171">
+                  <matrix>
+                    <Matrix tx="283" ty="11"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="141.5" y="160"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

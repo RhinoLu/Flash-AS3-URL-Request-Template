@@ -11,11 +11,14 @@ package
 	import fl.controls.TextInput;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.IOErrorEvent;
 	import flash.events.MouseEvent;
+	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import gtap.net.MyRequest;
+	import ru.inspirit.net.MultipartURLLoader;
 	
 	public class APIClip extends BaseAbstract
 	{
@@ -41,6 +44,8 @@ package
 		private var clipArray:Array;
 		
 		private var _result:APIClipResult;
+		private var _sendByMultipartURLLoader:Boolean = false;
+		private var ml:MultipartURLLoader;
 		
 		public function APIClip()
 		{
@@ -106,10 +111,14 @@ package
 			var clip:VarClip;
 			for (var i:int = 0; i < _varArray.length; i++)
 			{
-				clip = new VarClip();
+				if (_varArray[i].varType == "file") {
+					_sendByMultipartURLLoader = true;
+				}
+				clip = new VarClip(_varArray[i].varType);
 				clip.x = 0;
 				clip.y = i * VAR_CLIP_HEIGHT;
-				clip.varName = _varArray[i];
+				//clip.varName = _varArray[i];
+				clip.varName = _varArray[i].varName;
 				clipContainer.addChild(clip);
 				clipArray.push(clip);
 			}
@@ -127,28 +136,68 @@ package
 		
 		private function onCallClick(e:MouseEvent):void
 		{
+			if (_sendByMultipartURLLoader) {
+				sendFormByMultipartURLLoader();
+			}else {
+				sendFormByDataLoader();
+			}
+		}
+		
+		private function sendFormByDataLoader():void
+		{
 			var _obj:Object = {};
 			var clip:VarClip;
 			for (var i:int = 0; i < _varArray.length; i++)
 			{
 				clip = clipArray[i];
-				_obj[_varArray[i]] = clip.varValue;
+				_obj[_varArray[i].varName] = clip.varValue;
 			}
 			var _request:URLRequest = MyRequest.makeRequest(_api, _obj, _method);
 			_loader = new DataLoader(_request, new DataLoaderVars().autoDispose(true).noCache(true).onError(onCallError).onComplete(onCallComplete).vars);
 			_loader.load();
 		}
 		
-		private function onCallError(e:LoaderEvent):void
+		private function sendFormByMultipartURLLoader():void
 		{
-			addResult(e.text);
-			_loader.dispose(true);
+			ml = new MultipartURLLoader();
+			ml.addEventListener(Event.COMPLETE, onCallComplete);
+			ml.addEventListener(IOErrorEvent.IO_ERROR, onCallError);
+			var clip:VarClip;
+			for (var i:int = 0; i < _varArray.length; i++)
+			{
+				clip = clipArray[i];
+				if (_varArray[i].varType == "file") {
+					if (clip.data) {
+						ml.addFile(clip.data, "tmp" + i, _varArray[i].varName);
+					}
+				}else if (_varArray[i].varType == "string") {
+					ml.addVariable(_varArray[i].varName, clip.varValue);
+				}
+			}
+			ml.load(_api);
 		}
 		
-		private function onCallComplete(e:LoaderEvent):void
+		private function onCallError(e:Event):void
 		{
-			addResult(_loader.content);
-			_loader.dispose(true);
+			//trace("onCallError:" + e);
+			if (e is LoaderEvent) {
+				addResult(LoaderEvent(e).text);
+				_loader.dispose(true);
+			}else {
+				addResult(e.toString());
+				ml.dispose();
+			}
+		}
+		
+		private function onCallComplete(e:Event):void
+		{
+			if (e is LoaderEvent) {
+				addResult(_loader.content);
+				_loader.dispose(true);
+			}else {
+				addResult(ml.loader.data);
+				ml.dispose();
+			}
 		}
 		
 		private function addResult(value:String):void

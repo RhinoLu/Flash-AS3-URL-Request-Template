@@ -1,0 +1,56 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="bgTitle" itemID="4f45fade-000004b6" scaleGridLeft="6" scaleGridRight="277" scaleGridTop="2.75" scaleGridBottom="9.35" lastModified="1329986394">
+  <timeline>
+    <DOMTimeline name="bgTitle">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="-0.007568359375" c="0.007080078125" d="0" tx="89.5" ty="5.8"/>
+                            </matrix>
+                            <GradientEntry color="#3E3E3E" ratio="0"/>
+                            <GradientEntry color="#5C5C5C" ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" pixelHinting="true">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="!5660 242/5660 232"/>
+                        <Edge fillStyle1="1" edges="!5660 232/0 232"/>
+                        <Edge strokeStyle="1" edges="!0 232/0 242"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!5660 232/5660 60!5660 60[5660 0 5600 0!5600 0/60 0!60 0[0 0 0 60!0 60/0 232"/>
+                        <Edge cubics="!60 0(;20,0 0,20 0,60q60 0Q0 0q0 60);"/>
+                        <Edge cubics="!5660 60(;5660,20 5640,0 5600,0q5660 60Q5660 0q5600 0);"/>
+                        <Edge cubics="!5600 0(;5600,0 60,0 60,0q5600 0 60 0);"/>
+                        <Edge cubics="!0 232(;0,232 5660,232 5660,232q0 232 5660 232);"/>
+                        <Edge cubics="!5660 232(;5660,232 5660,60 5660,60q5660 232 5660 60);"/>
+                        <Edge cubics="!5660 242(;5660,242 5660,232 5660,232q5660 242 5660 232);"/>
+                        <Edge cubics="!0 232(;0,232 0,242 0,242q0 232 0 242);"/>
+                        <Edge cubics="!0 60(;0,60 0,232 0,232q0 60 0 232);"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

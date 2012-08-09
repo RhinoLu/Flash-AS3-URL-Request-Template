@@ -98,8 +98,6 @@ package
 			clip.varArray = obj.vars;
 			clip.method = obj.method;
 			clip.signal.add(onAPIClipCall);
-			//clip.x = int((stage.stageWidth - 283) * 0.5 + (Math.random() * 20 - 10));
-			//clip.y = int((stage.stageHeight - 331) * 0.5 + (Math.random() * 20 - 10));
 			clip.x = 100 + (clipContainer.numChildren * 50);
 			clip.y = 100 + (clipContainer.numChildren * 50);
 			clipContainer.addChild(clip);
@@ -164,7 +162,8 @@ package
 				varsStr = "";
 				for (var j:int = 0; j < clip.varArray.length; j++) 
 				{
-					varsStr += "<vars><![CDATA[" + clip.varArray[j] + "]]></vars>";
+					//varsStr += "<vars><![CDATA[" + clip.varArray[j] + "]]></vars>";
+					varsStr += "<vars><name><![CDATA[" + clip.varArray[j].varName + "]]></name><type><![CDATA[" + clip.varArray[j].varType + "]]></type></vars>";
 				}
 				str += "<console><desc><![CDATA[" + clip.desc + "]]></desc><api><![CDATA[" + clip.api + "]]></api><method>" + clip.method + "</method>" + varsStr + "</console>";
 			}
@@ -189,8 +188,6 @@ package
 			consoleXML = XML(consoleLoader.content);
 			//t.obj(consoleXML);
 			consoleLoader.dispose(true);
-			//trace(consoleXML.console);
-			//trace(consoleXML.console.length());
 			parseXML(consoleXML);
 		}
 		
@@ -220,7 +217,9 @@ package
 				var vars_len:uint = xml.console[i].vars.length();
 				for (var j:int = 0; j < vars_len; j++) 
 				{
-					obj.vars.push(xml.console[i].vars[j]);
+					//obj.vars.push(xml.console[i].vars[j]);
+					obj.vars.push( { "varName":xml.console[i].vars[j].name, "varType":xml.console[i].vars[j].type } );
+					
 				}
 				addAPIClip(obj);
 			}

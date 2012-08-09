@@ -1,0 +1,43 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="bgEmpty" itemID="4f460d33-000005de" lastModified="1329990972">
+  <timeline>
+    <DOMTimeline name="bgEmpty">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#656565"/>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <SolidColor color="#939393"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="2" edges="!-4587 0/0 0!0 0|0 328"/>
+                        <Edge fillStyle1="1" edges="!0 328|0 340!0 340/-4600 340!-4600 340/-4600 0!-4600 0/-4587 0"/>
+                        <Edge fillStyle0="2" fillStyle1="1" edges="!-4587 0/-4587 328!-4587 328/0 328"/>
+                        <Edge cubics="!0 0(;0,0 0,328 0,328q0 0 0 328);"/>
+                        <Edge cubics="!0 328(;0,328 0,340 0,340q0 328 0 340);"/>
+                        <Edge cubics="!-4587 0(;-4587,0 -4587,328 -4587,328p-4587 0q-4587 328);"/>
+                        <Edge cubics="!-4600 0(;-4600,0 -4587,0 -4587,0q-4600 0 -4587 0);"/>
+                        <Edge cubics="!-4600 340(;-4600,340 -4600,0 -4600,0q-4600 340 -4600 0);"/>
+                        <Edge cubics="!-4587 328(;-4587,328 0,328 0,328q-4587 328 0 328);"/>
+                        <Edge cubics="!-4587 0(;-4587,0 0,0 0,0q-4587 0 0 0);"/>
+                        <Edge cubics="!0 340(;0,340 -4600,340 -4600,340q0 340 -4600 340);"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,260 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="VarForm" itemID="4f4347f6-000005ab" linkageExportForAS="true" linkageClassName="VarForm" lastModified="1344489208" lastUniqueIdentifier="17">
+  <timeline>
+    <DOMTimeline name="VarForm">
+      <layers>
+        <DOMLayer name="btn_remove" color="#9933CC" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="Button" name="btn_remove" centerPoint3DX="240" centerPoint3DY="11" uniqueID="4">
+                  <matrix>
+                    <Matrix a="0.5" tx="215"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='2.48.4'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="emphasized">
+      <Inspectable name="emphasized" variable="emphasized" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="label">
+      <Inspectable name="label" variable="label" category="" verbose="0" defaultValue="remove" type="String"/>
+   </property>
+   <property id="labelPlacement">
+      <Inspectable name="labelPlacement" variable="labelPlacement" category="" verbose="0" defaultValue="right" enumeration="left,right,top,bottom" type="List"/>
+   </property>
+   <property id="selected">
+      <Inspectable name="selected" variable="selected" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="toggle">
+      <Inspectable name="toggle" variable="toggle" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="radio_file" color="#4F80FF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="RadioButton" name="radio_file" centerPoint3DX="190" centerPoint3DY="31" uniqueID="16">
+                  <matrix>
+                    <Matrix a="0.600006103515625" tx="160" ty="20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='2.48.16'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="groupName">
+      <Inspectable name="groupName" variable="groupName" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="label">
+      <Inspectable name="label" variable="label" category="" verbose="0" defaultValue="File" type="String"/>
+   </property>
+   <property id="labelPlacement">
+      <Inspectable name="labelPlacement" variable="labelPlacement" category="" verbose="0" defaultValue="right" enumeration="left,right,top,bottom" type="List"/>
+   </property>
+   <property id="selected">
+      <Inspectable name="selected" variable="selected" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="value">
+      <Inspectable name="value" variable="value" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="radio_string" color="#FF4F4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="RadioButton" name="radio_string" centerPoint3DX="128.5" centerPoint3DY="31" uniqueID="17">
+                  <matrix>
+                    <Matrix a="0.650009155273438" tx="96" ty="20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='2.48.17'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="groupName">
+      <Inspectable name="groupName" variable="groupName" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="label">
+      <Inspectable name="label" variable="label" category="" verbose="0" defaultValue="String" type="String"/>
+   </property>
+   <property id="labelPlacement">
+      <Inspectable name="labelPlacement" variable="labelPlacement" category="" verbose="0" defaultValue="right" enumeration="left,right,top,bottom" type="List"/>
+   </property>
+   <property id="selected">
+      <Inspectable name="selected" variable="selected" category="" verbose="0" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="value">
+      <Inspectable name="value" variable="value" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Label" color="#808080" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="Label" centerPoint3DX="115.1" centerPoint3DY="33" uniqueID="15">
+                  <matrix>
+                    <Matrix tx="65" ty="22"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='2.48.15'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="autoSize">
+      <Inspectable name="autoSize" variable="autoSize" category="" verbose="0" defaultValue="none" enumeration="left,center,right,none" type="List"/>
+   </property>
+   <property id="condenseWhite">
+      <Inspectable name="condenseWhite" variable="condenseWhite" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="htmlText">
+      <Inspectable name="htmlText" variable="htmlText" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="selectable">
+      <Inspectable name="selectable" variable="selectable" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="text">
+      <Inspectable name="text" variable="text" category="" verbose="0" defaultValue="Type :" type="String"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="wordWrap">
+      <Inspectable name="wordWrap" variable="wordWrap" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="txt_name" color="#FF800A" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="TextInput" name="txt_name" centerPoint3DX="137.5" centerPoint3DY="11" uniqueID="5">
+                  <matrix>
+                    <Matrix a="1.44999694824219" tx="65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='2.48.5'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="displayAsPassword">
+      <Inspectable name="displayAsPassword" variable="displayAsPassword" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="editable">
+      <Inspectable name="editable" variable="editable" category="" verbose="0" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="maxChars">
+      <Inspectable name="maxChars" variable="maxChars" category="" verbose="0" defaultValue="0" type="Number"/>
+   </property>
+   <property id="restrict">
+      <Inspectable name="restrict" variable="restrict" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="text">
+      <Inspectable name="text" variable="text" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="txt_num" color="#FF4FFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMComponentInstance libraryItemName="Label" name="txt_num" selected="true" centerPoint3DX="82.1" centerPoint3DY="11" uniqueID="6">
+                  <matrix>
+                    <Matrix tx="32"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='2.48.6'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="autoSize">
+      <Inspectable name="autoSize" variable="autoSize" category="" verbose="0" defaultValue="none" enumeration="left,center,right,none" type="List"/>
+   </property>
+   <property id="condenseWhite">
+      <Inspectable name="condenseWhite" variable="condenseWhite" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="htmlText">
+      <Inspectable name="htmlText" variable="htmlText" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="selectable">
+      <Inspectable name="selectable" variable="selectable" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="text">
+      <Inspectable name="text" variable="text" category="" verbose="0" defaultValue="var1 :" type="String"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="wordWrap">
+      <Inspectable name="wordWrap" variable="wordWrap" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

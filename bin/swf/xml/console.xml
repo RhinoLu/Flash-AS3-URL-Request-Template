@@ -4,7 +4,6 @@
 		<desc>Login</desc>
 		<api>../api/login</api>
 		<method>POST</method>
-		<returnType>string</returnType>
 		<vars>
 			<name>email</name>
 			<type>string</type>
@@ -19,7 +18,6 @@
 		<desc>upload</desc>
 		<api>../api/upload</api>
 		<method>POST</method>
-		<returnType>string</returnType>
 		<vars>
 			<name>photo</name>
 			<type>file</type>

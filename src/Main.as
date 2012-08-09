@@ -97,12 +97,8 @@ package
 			clip.api = obj.api;
 			clip.varArray = obj.vars;
 			clip.method = obj.method;
-			trace(obj.returnType);
-			if (obj.returnType) {
-				clip.returnType = obj.returnType;
-			}else {
-				clip.returnType = "string";
-			}
+			//trace(obj.returnType);
+			clip.returnType = obj.returnType;
 			clip.signal.add(onAPIClipCall);
 			clip.x = 100 + (clipContainer.numChildren * 50);
 			clip.y = 100 + (clipContainer.numChildren * 50);
@@ -170,7 +166,7 @@ package
 				{
 					varsStr += "<vars><name><![CDATA[" + clip.varArray[j].varName + "]]></name><type><![CDATA[" + clip.varArray[j].varType + "]]></type></vars>";
 				}
-				str += "<console><desc><![CDATA[" + clip.desc + "]]></desc><api><![CDATA[" + clip.api + "]]></api><method>" + clip.method + "</method><returnType>string</returnType>" + varsStr + "</console>";
+				str += "<console><desc><![CDATA[" + clip.desc + "]]></desc><api><![CDATA[" + clip.api + "]]></api><method>" + clip.method + "</method><returnType>" + clip.returnType + "</returnType>" + varsStr + "</console>";
 			}
 			str += "</data>";
 			//trace(str);
@@ -218,7 +214,11 @@ package
 				obj.desc       = xml.console[i].desc;
 				obj.api        = xml.console[i].api;
 				obj.method     = xml.console[i].method;
-				obj.returnType = xml.console[i].returnType;
+				if (xml.console[i].hasOwnProperty("returnType")) {
+					obj.returnType = String(xml.console[i].returnType);
+				}else {
+					obj.returnType = "string";
+				}
 				obj.vars = [];
 				var vars_len:uint = xml.console[i].vars.length();
 				for (var j:int = 0; j < vars_len; j++) 

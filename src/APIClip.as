@@ -279,9 +279,16 @@ package
 			bgEmpty.width = 283 - txt_desc.textWidth - 30;
 		}
 		
+		public function get returnType():String 
+		{
+			return _returnType;
+		}
+		
 		public function set returnType(value:String):void 
 		{
 			_returnType = value;
 		}
+		
+		
 	}
 }

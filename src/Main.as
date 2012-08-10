@@ -100,8 +100,8 @@ package
 			//trace(obj.returnType);
 			clip.returnType = obj.returnType;
 			clip.signal.add(onAPIClipCall);
-			clip.x = 100 + (clipContainer.numChildren * 50);
-			clip.y = 100 + (clipContainer.numChildren * 50);
+			clip.x = 50 + (clipContainer.numChildren * 20);
+			clip.y = 50 + (clipContainer.numChildren * 20);
 			clipContainer.addChild(clip);
 			clipArray.push(clip);
 			

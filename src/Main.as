@@ -30,8 +30,10 @@ package
 		public var btn_load:Button;
 		public var btn_export:Button;
 		
+		private var btnContainer:Sprite;
+		
 		private var clipContainer:Sprite;
-		private var clipArray:Array = new Array();
+		private var clipArray:Array;
 		private var clipCurrent:*;
 		
 		private var form:APIForm;
@@ -56,6 +58,7 @@ package
 			addAPIForm();
 			onResize();
 			stage.addEventListener(Event.RESIZE, onResize);
+			btnContainer = addChildAt(new Sprite(), 0) as Sprite;
 			clipContainer = addChildAt(new Sprite(), 0) as Sprite;
 			loadDefaultXML();
 			
@@ -90,9 +93,45 @@ package
 			}
 		}
 		
+		private function addBtn(obj:Object):void
+		{
+			var btn:Button = new Button();
+			btn.name = "b" + btnContainer.numChildren;
+			btn.label = obj.desc;
+			btn.x = 10;
+			btn.y = 50 + 29 * btnContainer.numChildren;
+			btn.width = 110;
+			QuickBtn.setBtn(btn, null, null, onBtnClick);
+			btnContainer.addChild(btn);
+		}
+		
+		private function onBtnClick(e:MouseEvent):void 
+		{
+			var btn:Button = e.target as Button;
+			for (var i:int = 0; i < clipArray.length; i++) 
+			{
+				if (btn.name.slice(1, btn.name.length) == clipArray[i].name.slice(1, clipArray[i].name.length)) {
+					clipContainer.setChildIndex(clipArray[i], clipContainer.numChildren - 1);
+					//var toX:Number = (stage.stageWidth - clipArray[i].width) * 0.5;
+					//var toY:Number = (stage.stageHeight - clipArray[i].height) * 0.5;
+					var toX:Number = 130 + (i * 25);
+					var toY:Number = 50 + (i * 29);
+					TweenMax.to(clipArray[i], 0.5, new TweenMaxVars().x(toX).y(toY).vars);
+					break;
+				}
+			}
+		}
+		
+		private function removeBtn(btn:Button):void
+		{
+			QuickBtn.removeBtn(btn, null, null, onBtnClick);
+			btnContainer.removeChild(btn);
+		}
+		
 		private function addAPIClip(obj:Object):void
 		{
 			var clip:APIClip = new APIClip();
+			clip.name = "c" + clipContainer.numChildren;
 			clip.desc = obj.desc;
 			clip.api = obj.api;
 			clip.varArray = obj.vars;
@@ -100,8 +139,8 @@ package
 			//trace(obj.returnType);
 			clip.returnType = obj.returnType;
 			clip.signal.add(onAPIClipCall);
-			clip.x = 50 + (clipContainer.numChildren * 20);
-			clip.y = 50 + (clipContainer.numChildren * 20);
+			clip.x = 130 + (clipContainer.numChildren * 25);
+			clip.y = 50 + (clipContainer.numChildren * 29);
 			clipContainer.addChild(clip);
 			clipArray.push(clip);
 			
@@ -122,6 +161,19 @@ package
 			//trace(type, obj);
 			if (type == BaseAbstract.HIDE_COMPLETE) {
 				if (obj is APIClip) {
+					var s:String = APIClip(obj).name.slice(1, APIClip(obj).name.length);
+					var btn:Button;
+					for (var i:int = 0; i < btnContainer.numChildren; i++) 
+					{
+						btn = btnContainer.getChildAt(i) as Button;
+						if (btn) {
+							if (btn.name.slice(1, btn.name.length) == s) {
+								removeBtn(btn);
+								break;
+							}
+						}
+					}
+					
 					removeAPIClip(APIClip(obj));
 				}
 			}
@@ -205,7 +257,11 @@ package
 			{
 				clipContainer.removeChildAt(0);
 			}
-			
+			while (btnContainer.numChildren > 0) 
+			{
+				btnContainer.removeChildAt(0);
+			}
+			clipArray = [];
 			var len:uint = xml.console.length();
 			var obj:Object;
 			for (var i:int = 0; i < len; i++) 
@@ -229,6 +285,7 @@ package
 					} );
 				}
 				addAPIClip(obj);
+				addBtn(obj);
 			}
 		}
 	}

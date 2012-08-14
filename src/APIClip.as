@@ -74,7 +74,8 @@ package
 			addVarClip();
 			arrangeDistance(0);
 			
-			bgTitle.addEventListener(MouseEvent.MOUSE_DOWN, onTitleDown);
+			//bgTitle.addEventListener(MouseEvent.MOUSE_DOWN, onTitleDown);
+			this.addEventListener(MouseEvent.MOUSE_DOWN, onDown);
 			btn_close.addEventListener(MouseEvent.CLICK, onCloseClick);
 		}
 		
@@ -82,7 +83,7 @@ package
 		{
 			hide();
 		}
-		
+		/*
 		private function onTitleDown(e:MouseEvent):void 
 		{
 			bgTitle.removeEventListener(MouseEvent.MOUSE_DOWN, onTitleDown);
@@ -96,6 +97,22 @@ package
 		{
 			stage.removeEventListener(MouseEvent.MOUSE_UP, onTitleUp);
 			bgTitle.addEventListener(MouseEvent.MOUSE_DOWN, onTitleDown);
+			this.stopDrag();
+		}
+		*/
+		private function onDown(e:MouseEvent):void 
+		{
+			this.removeEventListener(MouseEvent.MOUSE_DOWN, onDown);
+			stage.addEventListener(MouseEvent.MOUSE_UP, onUp);
+			this.startDrag();
+			
+			parent.setChildIndex(this, parent.numChildren - 1);
+		}
+		
+		private function onUp(e:MouseEvent):void 
+		{
+			stage.removeEventListener(MouseEvent.MOUSE_UP, onUp);
+			this.addEventListener(MouseEvent.MOUSE_DOWN, onDown);
 			this.stopDrag();
 		}
 		

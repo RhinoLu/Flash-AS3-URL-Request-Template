@@ -104,7 +104,7 @@
           </DOMCompiledClipItem>
      </media>
      <symbols>
-          <Include href="APIClip.xml" itemID="4f436a01-00000215" lastModified="1344508314"/>
+          <Include href="APIClip.xml" itemID="4f436a01-00000215" lastModified="1344933763"/>
           <Include href="APIClipResult.xml" itemID="4f460ce0-0000058c" lastModified="1330435155"/>
           <Include href="APIForm.xml" itemID="4f4347f9-000005ac" lastModified="1344487164"/>
           <Include href="bgEmpty.xml" loadImmediate="false" itemID="4f460d33-000005de" lastModified="1329990972"/>
@@ -177,7 +177,7 @@
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="APIForm" selected="true" centerPoint3DX="780.5" centerPoint3DY="158">
+                                        <DOMSymbolInstance libraryItemName="APIForm" centerPoint3DX="780.5" centerPoint3DY="158">
                                              <matrix>
                                                   <Matrix tx="675" ty="19"/>
                                              </matrix>
@@ -200,7 +200,7 @@
                                              <transformationPoint>
                                                   <Point x="50" y="11"/>
                                              </transformationPoint>
-                                             <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='APIClip' oldCopiedComponentPath=''>
+                                             <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='5'>
 </component>
 ]]></dataBindingXML>
                                              <parametersAsXML><![CDATA[   <property id="emphasized">
@@ -241,7 +241,7 @@
                                              <transformationPoint>
                                                   <Point x="50" y="11"/>
                                              </transformationPoint>
-                                             <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='APIClip' oldCopiedComponentPath=''>
+                                             <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='6'>
 </component>
 ]]></dataBindingXML>
                                              <parametersAsXML><![CDATA[   <property id="emphasized">
@@ -271,19 +271,19 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Layer 2" color="#9933CC" locked="true">
+                    <DOMLayer name="v" color="#9933CC" locked="true" current="true" isSelected="true" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMStaticText width="23.1" height="10.95" autoExpand="true" isSelectable="false">
+                                        <DOMStaticText width="29.8" height="10.95" autoExpand="true" isSelectable="false">
                                              <matrix>
-                                                  <Matrix tx="936.9" ty="5"/>
+                                                  <Matrix tx="928.9" ty="5"/>
                                              </matrix>
                                              <textRuns>
                                                   <DOMTextRun>
-                                                       <characters>v0.2</characters>
+                                                       <characters>v0.28</characters>
                                                        <textAttrs>
-                                                            <DOMTextAttrs aliasText="false" letterSpacing="1" size="9" bitmapSize="180" face="LucidaSansUnicode" fillColor="#3A3A3A"/>
+                                                            <DOMTextAttrs alignment="right" aliasText="false" letterSpacing="1" size="9" bitmapSize="180" face="LucidaSansUnicode" fillColor="#3A3A3A"/>
                                                        </textAttrs>
                                                   </DOMTextRun>
                                              </textRuns>
@@ -292,11 +292,11 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="APIClip" color="#4FFF4F" current="true" isSelected="true" autoNamed="false" layerType="guide">
+                    <DOMLayer name="APIClip" color="#4FFF4F" locked="true" autoNamed="false" layerType="guide">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="APIClip" selected="true" centerPoint3DX="302" centerPoint3DY="307">
+                                        <DOMSymbolInstance libraryItemName="APIClip" centerPoint3DX="302" centerPoint3DY="307">
                                              <matrix>
                                                   <Matrix tx="88" ty="207"/>
                                              </matrix>
@@ -313,26 +313,26 @@
      </timelines>
      <PrinterSettings/>
      <publishHistory>
-          <PublishItem publishSize="81772" publishTime="1344515136"/>
-          <PublishItem publishSize="81770" publishTime="1344515039"/>
-          <PublishItem publishSize="81761" publishTime="1344515017"/>
-          <PublishItem publishSize="81767" publishTime="1344514908"/>
-          <PublishItem publishSize="81763" publishTime="1344514820"/>
-          <PublishItem publishSize="81793" publishTime="1344514783"/>
-          <PublishItem publishSize="81748" publishTime="1344514759"/>
-          <PublishItem publishSize="81770" publishTime="1344514727"/>
-          <PublishItem publishSize="78978" publishTime="1344510373"/>
-          <PublishItem publishSize="78967" publishTime="1344510318"/>
-          <PublishItem publishSize="7961" publishTime="1344510152"/>
-          <PublishItem publishSize="78280" publishTime="1344509856"/>
-          <PublishItem publishSize="78224" publishTime="1344509496"/>
-          <PublishItem publishSize="77563" publishTime="1344508968"/>
-          <PublishItem publishSize="77548" publishTime="1344508644"/>
-          <PublishItem publishSize="77551" publishTime="1344508620"/>
-          <PublishItem publishSize="77531" publishTime="1344508590"/>
-          <PublishItem publishSize="77550" publishTime="1344508537"/>
-          <PublishItem publishSize="77532" publishTime="1344508455"/>
-          <PublishItem publishSize="77527" publishTime="1344508296"/>
+          <PublishItem publishSize="82286" publishTime="1344936247"/>
+          <PublishItem publishSize="82265" publishTime="1344936153"/>
+          <PublishItem publishSize="82187" publishTime="1344935839"/>
+          <PublishItem publishSize="82185" publishTime="1344935797"/>
+          <PublishItem publishSize="82181" publishTime="1344935676"/>
+          <PublishItem publishSize="82180" publishTime="1344935639"/>
+          <PublishItem publishSize="82155" publishTime="1344935497"/>
+          <PublishItem publishSize="82203" publishTime="1344935460"/>
+          <PublishItem publishSize="82177" publishTime="1344935441"/>
+          <PublishItem publishSize="82189" publishTime="1344935397"/>
+          <PublishItem publishSize="82172" publishTime="1344935381"/>
+          <PublishItem publishSize="82187" publishTime="1344935357"/>
+          <PublishItem publishSize="82034" publishTime="1344934957"/>
+          <PublishItem publishSize="82031" publishTime="1344934935"/>
+          <PublishItem publishSize="82033" publishTime="1344934915"/>
+          <PublishItem publishSize="82029" publishTime="1344934890"/>
+          <PublishItem publishSize="82068" publishTime="1344934876"/>
+          <PublishItem publishSize="82031" publishTime="1344934860"/>
+          <PublishItem publishSize="82055" publishTime="1344934820"/>
+          <PublishItem publishSize="81970" publishTime="1344934512"/>
      </publishHistory>
      <swcCache>
           <Swc hashKey="k718tUOF1.A1OSpQnqdJJ0" href="9d31qzomd7.swc">

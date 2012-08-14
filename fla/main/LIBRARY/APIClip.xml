@@ -1,12 +1,12 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="APIClip" itemID="4f436a01-00000215" linkageExportForAS="true" linkageClassName="APIClip" lastModified="1344508314" lastUniqueIdentifier="38">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="APIClip" itemID="4f436a01-00000215" linkageExportForAS="true" linkageClassName="APIClip" lastModified="1344933763" lastUniqueIdentifier="38">
   <timeline>
     <DOMTimeline name="APIClip">
       <layers>
-        <DOMLayer name="txt_desc" color="#FF800A" locked="true" autoNamed="false">
+        <DOMLayer name="txt_desc" color="#FF800A" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMDynamicText name="txt_desc" fontRenderingMode="device" width="96.95" height="12.55" isSelectable="false">
+                <DOMDynamicText name="txt_desc" fontRenderingMode="device" width="96.95" height="13.35" isSelectable="false">
                   <matrix>
                     <Matrix tx="16" ty="14"/>
                   </matrix>
@@ -14,13 +14,13 @@
                     <DOMTextRun>
                       <characters>登入</characters>
                       <textAttrs>
-                        <DOMTextAttrs aliasText="false" size="11" bitmapSize="220" face="Arial-BoldMT"/>
+                        <DOMTextAttrs aliasText="false" bitmapSize="240" face="ArialMT"/>
                       </textAttrs>
                     </DOMTextRun>
                     <DOMTextRun>
                       <characters></characters>
                       <textAttrs>
-                        <DOMTextAttrs aliasText="false" size="11" bitmapSize="220" face="Arial-BoldMT"/>
+                        <DOMTextAttrs aliasText="false" bitmapSize="240" face="ArialMT"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>
@@ -29,7 +29,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="txt_desc" color="#4FFFFF" locked="true" autoNamed="false" layerType="guide">
+        <DOMLayer name="txt_desc" color="#4FFFFF" locked="true" autoNamed="false" visible="false" layerType="guide">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -155,11 +155,11 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="guide" color="#4F80FF" current="true" isSelected="true" autoNamed="false" layerType="guide">
+        <DOMLayer name="guide" color="#4F80FF" locked="true" autoNamed="false" layerType="guide">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="VarClip" selected="true" centerPoint3DX="120" centerPoint3DY="122.5">
+                <DOMSymbolInstance libraryItemName="VarClip" centerPoint3DX="120" centerPoint3DY="122.5">
                   <matrix>
                     <Matrix tx="20" ty="102"/>
                   </matrix>

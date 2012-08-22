@@ -22,7 +22,7 @@
     <qtDefaultName>1</qtDefaultName>
     <rnwkDefaultName>1</rnwkDefaultName>
     <swcDefaultName>1</swcDefaultName>
-    <flashFileName>../bin/swf/main.swf</flashFileName>
+    <flashFileName>../bin/swf/console.swf</flashFileName>
     <projectorWinFileName>main.exe</projectorWinFileName>
     <projectorMacFileName>main.app</projectorMacFileName>
     <htmlFileName>main.html</htmlFileName>

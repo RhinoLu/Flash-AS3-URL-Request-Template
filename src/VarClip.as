@@ -17,6 +17,7 @@ package
 		private var _varName:String;
 		private var _varValue:String;
 		private var _varType:String;
+		private var _fileType:String;
 		private var _file:FileReference;
 		private var _data:ByteArray;
 		
@@ -63,6 +64,7 @@ package
 		private function onFileSelected(e:Event):void
 		{
 			_file.removeEventListener(Event.SELECT, onFileSelected);
+			_fileType = _file.type;
 			txt_value.text = _file.name;
 			_file.addEventListener(Event.COMPLETE, onFileLoaded);
 			_file.load();
@@ -100,6 +102,11 @@ package
 		public function get data():ByteArray 
 		{
 			return _data;
+		}
+		
+		public function get fileType():String 
+		{
+			return _fileType;
 		}
 	}
 }

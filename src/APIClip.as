@@ -198,7 +198,8 @@ package
 				clip = clipArray[i];
 				if (_varArray[i].varType == "file") {
 					if (clip.data) {
-						ml.addFile(clip.data, "tmp" + i, _varArray[i].varName);
+						trace("tmp" + i + clip.fileType);
+						ml.addFile(clip.data, "tmp" + i + clip.fileType, _varArray[i].varName);
 					}
 				}else if (_varArray[i].varType == "string") {
 					ml.addVariable(_varArray[i].varName, clip.varValue);

@@ -102,17 +102,22 @@ package
 		*/
 		private function onDown(e:MouseEvent):void 
 		{
-			this.removeEventListener(MouseEvent.MOUSE_DOWN, onDown);
-			stage.addEventListener(MouseEvent.MOUSE_UP, onUp);
-			this.startDrag();
-			
 			parent.setChildIndex(this, parent.numChildren - 1);
+			
+			//this.removeEventListener(MouseEvent.MOUSE_DOWN, onDown);
+			stage.addEventListener(MouseEvent.MOUSE_UP, onUp);
+			//trace(e.target, e.currentTarget);
+			if (e.target is TextField || e.target is Button) {
+				
+			}else {
+				this.startDrag();
+			}
 		}
 		
 		private function onUp(e:MouseEvent):void 
 		{
 			stage.removeEventListener(MouseEvent.MOUSE_UP, onUp);
-			this.addEventListener(MouseEvent.MOUSE_DOWN, onDown);
+			//this.addEventListener(MouseEvent.MOUSE_DOWN, onDown);
 			this.stopDrag();
 		}
 		
